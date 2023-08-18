@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      #btn-alert {
+        border: none;
+        border-radius: 5px;
+        padding: 7px 10px;
+        background-color: rgb(37, 116, 226);
+        font-size: 1.3em;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.2s;
+        position: fixed;
+        left: 45%;
+        top: 45%;
+      }
+
+      #btn-alert:hover {
+        opacity: 0.8;
+      }
+
+      #btn-alert:focus {
+        outline: rgb(37, 116, 226) solid 3px;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 576px) {
+        #btn-alert {
+          left: 38%;
+        }
+      }
+    </style>
+
+    <title>Happy Birthday Alice</title>
+  </head>
+
+  <body>
+    <button id="btn-alert" onclick="munculinAlert()">Klik Aku!</button>
+
+    <script>
+      async function munculinAlert() {
+        await Swal.fire("Halooo lis 😅");
+        await Swal.fire("Selamat ulang tahun ya... 😊");
+        await Swal.fire({
+          title: "Happy Birthday to you ! 🥳🥰",
+          text: "Semoga panjang umur, sehat selalu dan dilancarkan semua aktifitasnya",
+          imageUrl: "assets/1.jpg",
+          imageWidth: 400,
+          imageHeight: 300,
+          imageAlt: "Gambar kue ulang tahun",
+        });
+        await Swal.fire(
+          "Ucapan ulang tahun yang hangat untukmu 🥳🥳🥳, Nur Elisya! Walaupun kita berada di tempat yang berbeda, ingatlah bahwa kita selalu terhubung dalam pikiran dan hati. Semoga tahun ini penuh dengan petualangan dan kebahagiaan. Kirimkanmu senyuman dan kebahagiaan dari jauh! 🥰"
+        );
+        await Swal.fire({
+          title: "Suka ga lis?",
+          text: "Tolong jawab yang jujur ya...",
+          icon: "question",
+          showDenyButton: true,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Suka Banget!",
+          denyButtonText: `ah jelek !`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "yuhuu... caca sukaa.. hehe",
+              text: "yeay, plis jangan jatuh cinta sama yang lain sebelum ketemu aku 🥹",
+              imageUrl: "assets/kim.webp",
+              imageWidth: 400,
+              imageHeight: 300,
+              imageAlt: "Gambar loli bahagia",
+            });
+          } else {
+            Swal.fire({
+              title: "Maap yaa tehh eliss 🙏",
+              text: "Yah, maaf yaa klo kurang bagus.. aku bisanya cuman gini 🥺",
+              imageUrl: "assets/p3.webp",
+              imageWidth: 400,
+              imageHeight: 300,
+              imageAlt: "Gambar loli sedih",
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
